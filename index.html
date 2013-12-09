@@ -1,44 +1,26 @@
 ---
-layout: default
+layout: home
 ---
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
 
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+<div class="index-content blog">
+    <div class="section">
+        <ul class="artical-cate">
+            <li class="on"><a href="/"><span>Blog</span></a></li>
+            <li style="text-align:center"><a href="/opinion"><span>Opinion</span></a></li>
+            <li style="text-align:right"><a href="/project"><span>Project</span></a></li>
+        </ul>
 
-    <title>Jacry's Blog</title>
-  </head>
+        <div class="cate-bar"><span id="cateBar"></span></div>
 
-  <body>
-
-    <header>
-        <h1>Jacry's Blog</h1>
-      <div class="container">
-        <h2></h2>
-
-        <section id="downloads">
-          <a href="./emc/emc.html" class="btn btn-github"><span class="icon"></span>emc test static pages</a>
-        </section>
-      </div>
-    </header>
-
-    <div class="container">
-      <section id="main_content">
-            <pre>
-                <code>
-                <ul>
-                    {% for post in site.posts %}
-                　　　　<li>{{ post.date | date_to_string }} <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
-                　　{% endfor %}
-                </ul>
-                </code>
-            </pre>
-      </section>
+        <ul class="artical-list">
+        {% for post in site.categories.blog %}
+            <li>
+                <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+                <div class="title-desc">{{ post.description }}</div>
+            </li>
+        {% endfor %}
+        </ul>
     </div>
-      </body>
-  </html>
+    <div class="aside">
+    </div>
+</div>
