@@ -25,7 +25,8 @@ title: Jacry's Blog
         <section id="downloads">
             <a href="emc/emc.html" class="btn btn-github"><span class="icon"></span>Test Link</a>
         </section>
-        <section id="downloads">
+        <section id="category">
+            <li><a href="index.html">首页</a></li>
             {％ for category in site.categories ％}
             <li><a href="/{{category | first}}.html">{{ category | first }}({{ category | last | size }})</a></li>
             {％ endfor ％}
